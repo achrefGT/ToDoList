@@ -1,0 +1,113 @@
+<!doctype html>
+<html>
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">  
+        <title>{% block title %} mySite {% endblock %}</title>
+        <style>
+            html, body {
+              height: 100%;
+              margin: 0;
+            }
+
+            .cont {
+              display: flex;
+              min-height: 100vh;
+            }
+
+            .sideb {
+              width: 250px;
+              background-color: #333;
+              color: #fff;
+              padding-top: 20px;
+            }
+
+            .sideb ul {
+              list-style-type: none;
+              margin: 0;
+              padding: 0;
+            }
+
+            .sideb li {
+              margin-bottom: 10px;
+            }
+
+            .sideb li a {
+              display: block;
+              color: #fff;
+              text-decoration: none;
+              padding: 10px 20px;
+              border-radius: 5px;
+            }
+
+            .sideb li a:hover {
+              background-color: #555;
+            }
+
+            .conte {
+              flex: 1;
+              padding: 20px;
+            }
+
+            /* Center the sidebar on the left */
+            .center-left {
+              margin-left: auto;
+            }
+            .checkbox-label {
+                display: flex;
+                align-items: center;
+                margin-bottom: 10px; /* Adjust the margin as needed */
+            }
+
+            .checkbox-container {
+                display: flex;
+                width: 50vw; /* Set the width to 70% of the viewport width */
+                align-items: center;
+            }
+
+            .checkbox-container input[type="checkbox"] {
+                width: 20px; /* Adjust the width as needed */
+                height: 20px; /* Adjust the height as needed */
+                margin-right: 10px; /* Adjust the margin as needed */
+            }
+
+            .checkbox-container .checkbox-text {
+                flex: 1;
+            }
+          </style>
+         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    </head>
+
+    <body>
+        <div class="cont">
+            <div class="sideb">
+                <ul>
+                  <li><a href="/">Home</a></li>
+                  <li><a href="/admin">ADMIN</a></li>
+                  <li><a href="/create/">Create To Do List</a></li>
+                  {% for list in l %}
+                    <li><a href="/{{ list.name }}">{{ list.name }}</a></li>
+                  {% endfor %}
+                </ul>
+              </div>
+  
+            <div id="conte", name="conte", class="conte">
+                <div class="row justify-content-center">
+                  <div class="col-8">
+                    <h1 class="mt-2">My Site</h1>
+                    <hr class="mt-0 mb-4">
+                    {% block content %}
+                    {% endblock%}
+                  </div>
+                </div>
+              
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>
+      </body>
+    
+    </body>
+
+</html>
