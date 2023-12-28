@@ -19,9 +19,8 @@ This is a simple ToDo List web application developed using Django and styled wit
 - CSS (Bootstrap)
 - JavaScript
 
-## Getting Started
 
-### Prerequisites
+## Prerequisites
 
 - Python (3.x recommended)
 - Django
